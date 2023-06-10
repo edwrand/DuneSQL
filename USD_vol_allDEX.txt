@@ -1,0 +1,6 @@
+SELECT
+    DATE_TRUNC('month', block_time) AS month,
+    SUM(amount_usd) AS usd_vol
+FROM dex.trades
+GROUP BY DATE_TRUNC('month', block_time)
+ORDER BY DATE_TRUNC('month', block_time) ASC;
